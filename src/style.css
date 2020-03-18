@@ -1,7 +1,38 @@
+body{
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+.root{
+  margin: 80px 24px 0px 64px;
+}
+
 h1 {
   font-size: 3rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin: 0rem;
+  opacity: 0.87;
+}
+
+p {
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin: 0rem;
+  opacity: 0.65;
+}
+
+.button {
+  margin-top: 1.5rem;
+  background-color: cyan;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  color: #000000;
+  padding: 4px 8px 4px 8px;
 }
 
 
@@ -9,4 +40,5 @@ div {
   font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  color: 0.65;
 }

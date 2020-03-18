@@ -12,17 +12,18 @@
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8.3/dist/teachablemachine-pose.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="./src/style.css">
 
 </head>
 
 <body>
-
-  <h1>Don't touch your face dude!</h1>
-  <!-- <div>Teachable Machine Pose Model</div> -->
-  <button type="button" onclick="init()">Start</button>
-  <div><canvas id="canvas"></canvas></div>
-  <div id="label-container"></div>
+  <div class="root">
+    <h1>Acche se karona!</h1>
+    <p>Apne chehere ko haat naa lagao par go corona go...</p>
+    <button class="button" type="button" onclick="init()">Start</button>
+    <div><canvas id="canvas"></canvas></div>
+    <div id="label-container"></div>
+  </div>
   <script src="src/main.js"></script>
 </body>
 

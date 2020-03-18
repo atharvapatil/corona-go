@@ -1,9 +1,10 @@
 console.log('Javascript is so fucking cool');
 
-// const URL = 'https://teachablemachine.withgoogle.com/models/-eJSOoeR/';
 
 // window.addEventListener('onload', sampleFunctionTM());
 
+const URL = "https://teachablemachine.withgoogle.com/models/-eJSOoeR/";
+let model, webcam, ctx, labelContainer, maxPredictions;
 
 
 
@@ -11,8 +12,7 @@ console.log('Javascript is so fucking cool');
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
     // the link to your model provided by Teachable Machine export panel
-    const URL = "https://teachablemachine.withgoogle.com/models/-eJSOoeR/";
-    let model, webcam, ctx, labelContainer, maxPredictions;
+
 
     async function init() {
         const modelURL = URL + "model.json";
@@ -30,6 +30,7 @@ console.log('Javascript is so fucking cool');
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
+        // await webcam.pause();
         window.requestAnimationFrame(loop);
 
         // append/get elements to the DOM
@@ -61,10 +62,11 @@ console.log('Javascript is so fucking cool');
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
-
-        // finally draw the poses
-        // drawPose(pose);
     }
+
+
+
+
 
     function drawPose(pose) {
         if (webcam.canvas) {
