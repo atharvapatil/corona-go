@@ -1,9 +1,16 @@
 console.log('Javascript is so fucking cool');
 const URL = "https://teachablemachine.withgoogle.com/models/-eJSOoeR/";
 let model, webcam, ctx, labelContainer, maxPredictions;
+let song;
+let playMode = 'restart';
 
-window.addEventListener('DOMContentLoaded', init());
+// window.addEventListener('DOMContentLoaded', () => {});
 
+function setup() {
+  song = loadSound('/assets/moon.mp3');
+  console.log('song loaded');
+  init();
+}
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -24,7 +31,7 @@ async function init() {
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   // await webcam.pause();
-  window.requestAnimationFrame(loop);
+  window.requestAnimationFrame(thisloop);
 
   // append/get elements to the DOM
   const canvas = document.getElementById("canvas");
@@ -38,10 +45,10 @@ async function init() {
   }
 }
 
-async function loop(timestamp) {
+async function thisloop(timestamp) {
   webcam.update(); // update the webcam frame
   await predict();
-  window.requestAnimationFrame(loop);
+  window.requestAnimationFrame(thisloop);
 }
 
 async function predict() {
@@ -68,7 +75,19 @@ async function predict() {
     let topResult = await largestNumber(neutral_probablity, left_probablity, right_probablity);
     // console.log(topResult);
     document.getElementById('result').textContent = topResult;
+
+
+      if (topResult == 'neutral') {
+        // .isPlaying() returns a boolean
+        // song.playMode('sustain');
+        song.stop();
+      } else if (topResult == 'Ohh you have corona now' || topResult == 'Ohh you have corona now') {
+        // song.playMode('sustain');
+        song.play();
+      }
+
   }
+
 
 }
 
