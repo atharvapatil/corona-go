@@ -7,7 +7,7 @@ let playMode = 'restart';
 // window.addEventListener('DOMContentLoaded', () => {});
 
 function setup() {
-  song = loadSound('/assets/moon.mp3');
+  song = loadSound('./assets/moon.mp3');
   console.log('song loaded');
   init();
 }
@@ -76,12 +76,11 @@ async function predict() {
     // console.log(topResult);
     document.getElementById('result').textContent = topResult;
 
-
       if (topResult == 'neutral') {
         // .isPlaying() returns a boolean
         // song.playMode('sustain');
         song.stop();
-      } else if (topResult == 'Ohh you have corona now' || topResult == 'Ohh you have corona now') {
+      } else if (topResult == 'Ohh you have corona now' && !song.isPlaying()) {
         // song.playMode('sustain');
         song.play();
       }
