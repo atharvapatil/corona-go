@@ -8,7 +8,7 @@ body {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 72px;
+  padding-top: 48px;
   flex-wrap: wrap-reverse;
   max-width: 1096px;
   align-items: center;
@@ -56,13 +56,13 @@ body {
 .cta-wrapper button {
   display: block;
   margin: auto;
-  padding: 16px 12px;
+  padding: 16px 20px;
   background: linear-gradient(96.66deg, #FD5E53 0%, #D30218 100%);
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
   color: #FFF;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 120%;
   cursor: pointer;
   border: none;
@@ -70,5 +70,102 @@ body {
 }
 
 .cta-wrapper button:hover {
-  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+.know-more {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding-top: 80px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #263238;
+}
+
+.know-more a {
+  color: #263238;
+}
+
+.how-it-works {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1096px;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-image {
+  width: 50%;
+  min-height: 650px;
+}
+
+.how-text {
+  width: 50%;
+  background: #FFD31D;
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.how-text h4 {
+  padding-top: 64px;;
+  padding-left: 24px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #263238;
+  margin: 0;
+  max-width: 450px;
+}
+
+.how-text p {
+  margin: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 180%;
+  color: #37474f;
+  /* opacity: 0.9; */
+  max-width: 450px;
+  padding-bottom: 16px;
+}
+
+.privacy-text {
+  width: 50%;
+  background: #8ED6FF;
+  min-height: 650px;
+}
+
+.privacy-text h4 {
+  padding-top: 25%;
+  padding-left: 24px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #263238;
+  margin: 0;
+  max-width: 450px;
+}
+
+.privacy-text p {
+  margin: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 180%;
+  color: #37474f;
+  /* opacity: 0.9; */
+  max-width: 450px;
+  padding-bottom: 16px;
 }
