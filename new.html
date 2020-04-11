@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Face off, a browser window which reminds you not to touch your face</title>
+  <meta name="description" content="Teachable Browser">
+  <meta name="author" content="Atharva Patil">
+  <!-- <link rel="shortcut icon" href="./img/favicon.png"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8.3/dist/teachablemachine-pose.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/main.css">
+
+</head>
+
+<body>
+
+  <!-- <div><canvas id="canvas"></canvas></div>
+  <div id="label-container"></div>
+  <div><span id="result">sample</span></div> -->
+
+  <div class="top-intro">
+    <div class="top-text">
+      <h1>Don’t touch your face!</h1>
+      <p>Medical experts have advised against touching our face to avoid
+        the spread of COVID-19. This tool reminds you when you are touching your
+        face with audio feedback, helping you modify your behavior. </p>
+    </div>
+    <div class="top-animation">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player src="./assets/face-touch.json" background="transparent" speed="1" style="width: 420px; height: 420px;" loop autoplay>
+      </lottie-player>
+    </div>
+  </div>
+
+  <div class="cta-wrapper">
+    <button type="button" name="button">Start alerting me!</button>
+  </div>
+
+  <!-- <script src="./src/face.js"></script>  -->
+</body>
+
+</html>
