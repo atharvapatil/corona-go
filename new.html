@@ -7,6 +7,7 @@
   <title>Don't touch your face</title>
   <meta name="description" content="Don't touch your face">
   <meta name="author" content="Atharva Patil">
+  <link rel="shortcut icon" href="./assets/favico.png">
   <!-- <link rel="shortcut icon" href="./img/favicon.png"> -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
@@ -21,9 +22,7 @@
 
 <body>
 
-  <!-- <div><canvas id="canvas"></canvas></div>
-  <div id="label-container"></div>
-  <div><span id="result">sample</span></div> -->
+
 
   <div class="top-intro">
     <div class="top-text">
@@ -38,8 +37,23 @@
     </div>
   </div>
 
-  <div class="cta-wrapper">
+  <div class="cta-wrapper" id="cta-wrapper">
     <button type="button" name="button" onclick="init()">Start alerting me!</button>
+  </div>
+
+  <div class="loading-wrapper" id="loading-wrapper">
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>loading the math stuff bro</p>
+  </div>
+
+  <div class="status-wrapper" id="status-wrapper">
+    <div><canvas id="canvas"></canvas></div>
+    <div id="label-container"></div>
+    <div><span id="result">sample</span></div>
   </div>
 
   <p class="know-more"><a href="#">know more</a></p>

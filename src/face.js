@@ -19,6 +19,9 @@ async function init() {
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
+  document.getElementById('cta-wrapper').style.display = 'none';
+  document.getElementById('loading-wrapper').style.display = 'block';
+
   // load the model and metadata
   // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
   // Note: the pose library adds a tmPose object to your window (window.tmPose)
@@ -40,10 +43,10 @@ async function init() {
   canvas.height = size;
   ctx = canvas.getContext("2d");
   canvas.style.display = 'none';
-  labelContainer = document.getElementById("label-container");
-  for (let i = 0; i < maxPredictions; i++) { // and class labels
-    labelContainer.appendChild(document.createElement("div"));
-  }
+  // labelContainer = document.getElementById("label-container");
+  // for (let i = 0; i < maxPredictions; i++) { // and class labels
+  //   labelContainer.appendChild(document.createElement("div"));
+  // }
 }
 
 async function thisloop(timestamp) {
@@ -62,22 +65,26 @@ async function predict() {
   // Prediction 2: run input through teachable machine classification model
   const prediction = await model.predict(posenetOutput);
 
-  for (let i = 0; i < maxPredictions; i++) {
-    const classPrediction =
-      prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-    labelContainer.childNodes[i].innerHTML = classPrediction;
-  }
+  // for (let i = 0; i < maxPredictions; i++) {
+  //   const classPrediction =
+  //     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+  //   labelContainer.childNodes[i].innerHTML = classPrediction;
+  // }
 
   if (pose) {
+
+    document.getElementById('loading-wrapper').style.display = 'none';
+    document.getElementById('status-wrapper').style.display = 'block';
+
     let neutral_probablity = prediction[0].probability;
     let left_probablity = prediction[1].probability;
     let right_probablity = prediction[2].probability;
 
     let topResult = await largestNumber(neutral_probablity, left_probablity, right_probablity);
-    // console.log(topResult);
+
     document.getElementById('result').textContent = topResult;
 
-      if (topResult == 'neutral') {
+      if (topResult == 'Acchi baat no corona') {
         // .isPlaying() returns a boolean
         // song.playMode('sustain');
         feedbackSound.stop();
@@ -93,7 +100,7 @@ async function predict() {
 
 function largestNumber(one, two, three) {
 
-  let neutral = 'neutral';
+  let neutral = 'Acchi baat no corona';
   let left = 'Ohh you have corona now';
   let right = 'Ohh you have corona now';
 
@@ -106,6 +113,9 @@ function largestNumber(one, two, three) {
   };
 
 }
+
+
+
 
 function drawPose(pose) {
   if (webcam.canvas) {
