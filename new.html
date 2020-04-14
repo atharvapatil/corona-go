@@ -26,7 +26,7 @@
     <div class="top-text">
       <h1>Don’t touch your face!</h1>
       <p>A tool that reminds you when you are touching your face with audio feedback,
-        helping you modify your behavior. Built to avoid the spread COVID-19 to self. </p>
+        helping you modify your behavior. Built to avoid the spread COVID-19 onto oneself. </p>
     </div>
     <div class="top-animation">
       <lottie-player src="./assets/face-touch.json" background="transparent" speed="0.4" style="width: 420px; height: 420px;" loop autoplay>
@@ -42,15 +42,15 @@
     <div class="loading">
       <div></div>
       <div></div>
-      <div></div>
+      <div></div><br>
+      <p style="margin-left: 8px;">Preparing the machine.</p>
     </div>
-    <p>loading the math stuff bro</p>
   </div>
 
   <div class="status-wrapper" id="status-wrapper">
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
-    <div class="results"><span id="result-good">sample</span> <span id="result-bad">Stop touching your face!</span></div>
+    <div class="results"><span id="result-good">Nice! keep those hands away</span> <span id="result-bad">Stop touching your face!</span></div>
   </div>
 
 
@@ -66,18 +66,25 @@
           alerts you when you touch your face with audio feedback.</p>
         <p>The machine is taught to recognize people who are sitting down at their desks.
           Which is it's intended context of use. If you plan to stand up or lie down on your
-          bed it won't work as well. Read more about the design process.</p>
+          bed it won't work as well. Read more about the <a href="https://medium.com/@thatworkedyesterday/dont-touch-your-face-draft-version-c4018f9246a4" target="_blank">design process.</a> </p>
       </div>
 
     </div>
     <div class="how-image">
+      <div>
+        <video autoplay loop width="550">
+          <source src="./assets/imgs/face-touch.mp4" type="video/mp4">
+        </video>
+      </div>
 
     </div>
   </div>
 
   <div class="how-it-works">
     <div class="privacy-image">
-
+      <div>
+        <img src="./assets/imgs/privacy.png" alt="" style="width: 450px; height: inherit;">
+      </div>
     </div>
     <div class="privacy-text">
       <div>
@@ -86,7 +93,7 @@
           Everything runs locally & none of your data ever.</p>
         <p>Video feedback has been turned off as the application is intended to
           run passively like a browser extension to save computational load.
-          To have a peek behind the curtain try out a version with video feedback.</p>
+          To have a peek behind the curtain try out a version with <a href="/video.html" target="_blank">video feedback.</a></p>
       </div>
 
     </div>

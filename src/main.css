@@ -58,7 +58,7 @@ body {
   display: block;
   margin: auto;
   padding: 16px 20px;
-  background: linear-gradient(96.66deg, #FD5E53 0%, #D30218 100%);
+  background: linear-gradient(96.66deg, #323EDD 0%, #307FE2 100%);
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
   color: #FFF;
@@ -84,7 +84,7 @@ body {
   padding-top: 24px;
   padding-bottom: 88px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 120%;
   color: #263238;
   opacity: 0.5;
@@ -104,12 +104,15 @@ body {
 }
 
 .how-image {
-  width: 51%;
+  width: 50%;
   min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .how-text {
-  width: 49%;
+  width: 50%;
   background: #FFD31D;
   min-height: 650px;
   overflow: hidden;
@@ -145,9 +148,17 @@ body {
   padding-bottom: 16px;
 }
 
+.how-text a {
+  color: #263238;
+  cursor: pointer;
+}
+
 .privacy-image {
   width: 50%;
   min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .privacy-text {
@@ -162,8 +173,6 @@ body {
 }
 
 .privacy-text h4 {
-  /* padding-top: 80px; */
-  /* padding-left: 24px; */
   padding-bottom: 16px;
   padding-right: 24px;
   font-family: 'Inter', sans-serif;
@@ -177,17 +186,21 @@ body {
 
 .privacy-text p {
   margin: 0;
-  /* padding-left: 24px; */
   padding-right: 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 190%;
   color: #37474f;
-  /* opacity: 0.9; */
   max-width: 450px;
   padding-bottom: 16px;
 }
+
+.privacy-text a {
+  color: #263238;
+  cursor: pointer;
+}
+
 
 
 /* animation related stuff */
@@ -238,8 +251,8 @@ body {
 .loading {
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
 }
+
 
 .loading div {
     width: 0.8rem;

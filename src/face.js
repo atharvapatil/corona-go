@@ -8,9 +8,8 @@ let playMode = 'restart';
 // Setup function from p5 reference does the job of onload
 // window.addEventListener('DOMContentLoaded', () => {});
 function setup() {
-  feedbackSound = loadSound('./assets/moon.mp3');
+  feedbackSound = loadSound('./assets/alert.mp3');
   console.log('song loaded');
-  // init();
 }
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
