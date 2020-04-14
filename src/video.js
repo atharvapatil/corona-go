@@ -10,7 +10,7 @@ let playMode = 'restart';
 function setup() {
   feedbackSound = loadSound('./assets/moon.mp3');
   console.log('song loaded');
-  init();
+  // init();
 }
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
@@ -36,24 +36,20 @@ async function init() {
   await webcam.setup(); // request access to the webcam
   await webcam.play();
   // await webcam.pause();
-  window.requestAnimationFrame(thisloop);
+  window.requestAnimationFrame(predictionUpdate);
 
   // append/get elements to the DOM
   const canvas = document.getElementById("canvas");
   canvas.width = size;
   canvas.height = size;
   ctx = canvas.getContext("2d");
-  // canvas.style.display = 'none';
-  // labelContainer = document.getElementById("label-container");
-  // for (let i = 0; i < maxPredictions; i++) { // and class labels
-  //   labelContainer.appendChild(document.createElement("div"));
-  // }
+  canvas.style.borderRadius = '4px';
 }
 
-async function thisloop(timestamp) {
+async function predictionUpdate(timestamp) {
   webcam.update(); // update the webcam frame
   await predict();
-  window.requestAnimationFrame(thisloop);
+  window.requestAnimationFrame(predictionUpdate);
 }
 
 async function predict() {
@@ -77,18 +73,24 @@ async function predict() {
 
     let topResult = await largestNumber(neutral_probablity, left_probablity, right_probablity);
 
+    const goodResultSpan =  document.getElementById('result-good');
+    const badResultSpan =  document.getElementById('result-bad');
 
-
-      if (topResult == 'Acchi baat no corona') {
+      if (topResult == 'I see you are not touching your face') {
         feedbackSound.stop();
-        document.getElementById('result-good').textContent = topResult;
-        document.getElementById('result-good').style.background = '#a5d6a7';
-        document.getElementById('result-bad').style.background = '#e0e0e0';
-      } else if (topResult == 'Ohh you have corona now' && !feedbackSound.isPlaying()) {
-        // song.playMode('sustain');
-        document.getElementById('result-bad').textContent = topResult;
-        document.getElementById('result-bad').style.background = '#e57373';
-        document.getElementById('result-good').style.background = '#e0e0e0';
+        goodResultSpan.textContent = topResult;
+        goodResultSpan.style.background = '#a5d6a7';
+        goodResultSpan.style.color = 'black';
+        badResultSpan.style.background = '#e0e0e0';
+        badResultSpan.style.color = '#616161';
+
+      } else if (topResult == 'I see you are touching your face' && !feedbackSound.isPlaying()) {
+
+        badResultSpan.textContent = topResult;
+        badResultSpan.style.background = '#e57373';
+        badResultSpan.style.color = 'black';
+        goodResultSpan.style.background = '#e0e0e0';
+        goodResultSpan.style.color = '#616161';
         feedbackSound.play();
       }
 
@@ -96,14 +98,13 @@ async function predict() {
 
   }
 
-
 }
 
 function largestNumber(one, two, three) {
 
-  let neutral = 'Acchi baat no corona';
-  let left = 'Ohh you have corona now';
-  let right = 'Ohh you have corona now';
+  let neutral = 'I see you are not touching your face';
+  let left = 'I see you are touching your face';
+  let right = 'I see you are touching your face';
 
   if (one > two && one > three) {
     return neutral
@@ -116,16 +117,8 @@ function largestNumber(one, two, three) {
 }
 
 
-
-
 function drawPose(pose) {
   if (webcam.canvas) {
     ctx.drawImage(webcam.canvas, 0, 0);
-    // draw the keypoints and skeleton
-    if (pose) {
-      const minPartConfidence = 0.5;
-      tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
-      tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
-    }
   }
 }

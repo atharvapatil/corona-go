@@ -73,7 +73,7 @@ async function predict() {
     const goodResultSpan =  document.getElementById('result-good');
     const badResultSpan =  document.getElementById('result-bad');
 
-      if (topResult == 'Nice job!') {
+      if (topResult == 'Nice! Keep those hand away') {
         goodResultSpan.textContent = topResult;
         goodResultSpan.style.background = '#a5d6a7';
         goodResultSpan.style.color = 'black';
@@ -95,7 +95,7 @@ async function predict() {
 
 function largestNumber(one, two, three) {
 
-  let neutral = 'Nice job!';
+  let neutral = 'Nice! Keep those hand away';
   let left = 'Stop touching your face!';
   let right = 'Stop touching your face!';
 

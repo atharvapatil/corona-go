@@ -4,7 +4,16 @@ body {
   background-color: #FFF;
 }
 
-
+.top-intro {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 48px;
+  flex-wrap: wrap-reverse;
+  max-width: 1096px;
+  align-items: center;
+  justify-content: center;
+}
 
 .top-text {
   width: 60%;
@@ -48,7 +57,7 @@ body {
   display: block;
   margin: auto;
   padding: 16px 20px;
-  background: linear-gradient(96.66deg, #FD5E53 0%, #D30218 100%);
+  background: linear-gradient(96.66deg, #323EDD 0%, #307FE2 100%);
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
   color: #FFF;
@@ -68,7 +77,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 48px;
+  padding-top: 108px;
   max-width: 800px;
 }
 
@@ -85,7 +94,7 @@ body {
   flex-wrap: wrap-reverse;
   max-width: 1096px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 
@@ -102,34 +111,30 @@ body {
 }
 
 #result-good{
-  /* display: flex; */
-  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  color: #212121;
+  color: #424242;
   max-width: 300px;
   border-radius: 4px;
-  background: #a5d6a7;
+  background: #e0e0e0;
   padding: 12px 16px;
 }
 
 #result-bad{
-  /* display: flex; */
-  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  color: #212121;
+  color: #424242;
   max-width: 300px;
   border-radius: 4px;
-  background: #e57373;
+  background: #e0e0e0;
   padding: 12px 16px;
 }
 
@@ -137,7 +142,10 @@ body {
 .loading {
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
+  position: absolute;
+  top: 50%;
+  left:40%;
 }
 
 .loading div {
