@@ -72,10 +72,22 @@ body {
 
 .cta-wrapper button:hover {
   box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .status-wrapper{
   display: none;
+}
+
+.status-wrapper p{
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 72px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: #263238;
 }
 
 .know-more {
@@ -247,6 +259,65 @@ body {
   margin-left: 8px;
 }
 
+.references {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1096px;
+  align-items: center;
+  justify-content: center;
+}
+
+.references-text {
+  width: 50%;
+  background: #efb1ff;
+  min-height: 650px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.references-text h4 {
+  padding-bottom: 16px;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #263238;
+  margin: 0;
+  max-width: 450px;
+}
+
+.references-text p {
+  margin: 0;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 190%;
+  color: #37474f;
+  max-width: 450px;
+  padding-bottom: 16px;
+}
+
+.references-text ul {
+  margin: 0;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+  color: #37474f;
+  max-width: 450px;
+  padding-bottom: 16px;
+}
+
+.references-text a {
+color: #263238;
+}
 
 .loading {
   display: flex;
