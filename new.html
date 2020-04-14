@@ -22,14 +22,11 @@
 
 <body>
 
-
-
   <div class="top-intro">
     <div class="top-text">
       <h1>Don’t touch your face!</h1>
-      <p>Medical experts have advised against touching our face to avoid
-        the spread of COVID-19. This tool reminds you when you are touching your
-        face with audio feedback, helping you modify your behavior. </p>
+      <p>A tool that reminds you when you are touching your face with audio feedback,
+        helping you modify your behavior. Built to avoid the spread COVID-19 to self. </p>
     </div>
     <div class="top-animation">
       <lottie-player src="./assets/face-touch.json" background="transparent" speed="0.4" style="width: 420px; height: 420px;" loop autoplay>
@@ -53,21 +50,25 @@
   <div class="status-wrapper" id="status-wrapper">
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
-    <div><span id="result">sample</span></div>
+    <div class="results"><span id="result-good">sample</span> <span id="result-bad">Stop touching your face!</span></div>
   </div>
 
-  <p class="know-more"><a href="#">know more</a></p>
 
-  <div class="how-it-works">
+  <p class="know-more"><a href="#how-it-works">know more</a></p>
+
+  <div class="how-it-works" id="how-it-works">
     <div class="how-text">
-      <h4>How this works?</h4>
-      <p>A machine-learning algorithm was taught what people
-        touching their faces & not touching their faces looks like.</p>
-      <p>Using your webcam algorithm monitors you &
-        alerts you when you touch your face with audio feedback.</p>
-      <p>The machine is taught to recognize people who are sitting down at their desks.
-        Which is it's intended context of use. If you plan to stand up or lie down on your
-        bed it won't work as well. Read more about the design process.</p>
+      <div>
+        <h4>How it works?</h4>
+        <p>A machine-learning algorithm was taught what people
+          touching their faces & not touching their faces looks like.</p>
+        <p>Using your webcam algorithm monitors you &
+          alerts you when you touch your face with audio feedback.</p>
+        <p>The machine is taught to recognize people who are sitting down at their desks.
+          Which is it's intended context of use. If you plan to stand up or lie down on your
+          bed it won't work as well. Read more about the design process.</p>
+      </div>
+
     </div>
     <div class="how-image">
 
@@ -75,32 +76,18 @@
   </div>
 
   <div class="how-it-works">
-    <div class="how-image">
+    <div class="privacy-image">
 
     </div>
     <div class="privacy-text">
-      <h4>Privacy</h4>
-      <p>The algorithm runs locally on the browser.
-        Everything runs locally & none of your data ever.</p>
-      <p>Video feedback has been turned off as the application is intended to
-        run passively like a browser extension to save computational load.
-        To have a peek behind the curtain try out a version with video feedback.</p>
-    </div>
-  </div>
-
-
-  <div class="how-it-works">
-    <div class="how-text">
-      <h4>How this works?</h4>
-      <p>A machine-learning algorithm was taught what people
-        touching their faces & not touching their faces looks like.</p>
-      <p>Using your webcam algorithm monitors you &
-        alerts you when you touch your face with audio feedback.</p>
-      <p>The machine is taught to recognize people who are sitting down at their desks.
-        Which is it's intended context of use. If you plan to stand up or lie down on your
-        bed it won't work as well. Read more about the design process.</p>
-    </div>
-    <div class="how-image">
+      <div>
+        <h4>Privacy</h4>
+        <p>The algorithm runs locally on the browser.
+          Everything runs locally & none of your data ever.</p>
+        <p>Video feedback has been turned off as the application is intended to
+          run passively like a browser extension to save computational load.
+          To have a peek behind the curtain try out a version with video feedback.</p>
+      </div>
 
     </div>
   </div>

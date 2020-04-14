@@ -10,7 +10,7 @@ let playMode = 'restart';
 function setup() {
   feedbackSound = loadSound('./assets/moon.mp3');
   console.log('song loaded');
-  // init();
+  init();
 }
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
@@ -19,19 +19,23 @@ async function init() {
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
+  document.getElementById('top-intro').style.display = 'none';
   document.getElementById('cta-wrapper').style.display = 'none';
   document.getElementById('loading-wrapper').style.display = 'block';
 
   // load the model and metadata
+  // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+  // Note: the pose library adds a tmPose object to your window (window.tmPose)
   model = await tmPose.load(modelURL, metadataURL);
   maxPredictions = model.getTotalClasses();
 
   // Convenience function to setup a webcam
-  const size = 200;
+  const size = 330;
   const flip = true; // whether to flip the webcam
   webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
   await webcam.setup(); // request access to the webcam
   await webcam.play();
+  // await webcam.pause();
   window.requestAnimationFrame(thisloop);
 
   // append/get elements to the DOM
@@ -39,7 +43,11 @@ async function init() {
   canvas.width = size;
   canvas.height = size;
   ctx = canvas.getContext("2d");
-  canvas.style.display = 'none';
+  // canvas.style.display = 'none';
+  // labelContainer = document.getElementById("label-container");
+  // for (let i = 0; i < maxPredictions; i++) { // and class labels
+  //   labelContainer.appendChild(document.createElement("div"));
+  // }
 }
 
 async function thisloop(timestamp) {
@@ -61,7 +69,7 @@ async function predict() {
   if (pose) {
 
     document.getElementById('loading-wrapper').style.display = 'none';
-    document.getElementById('status-wrapper').style.display = 'block';
+    document.getElementById('status-wrapper').style.display = 'flex';
 
     let neutral_probablity = prediction[0].probability;
     let left_probablity = prediction[1].probability;
@@ -70,34 +78,32 @@ async function predict() {
     let topResult = await largestNumber(neutral_probablity, left_probablity, right_probablity);
 
 
-    const goodResultSpan =  document.getElementById('result-good');
-    const badResultSpan =  document.getElementById('result-bad');
 
-      if (topResult == 'Nice job!') {
-        goodResultSpan.textContent = topResult;
-        goodResultSpan.style.background = '#a5d6a7';
-        goodResultSpan.style.color = 'black';
-        badResultSpan.style.background = '#e0e0e0';
-        badResultSpan.style.color = '#616161';
+      if (topResult == 'Acchi baat no corona') {
         feedbackSound.stop();
-      } else if (topResult == 'Stop touching your face!' && !feedbackSound.isPlaying()) {
-        badResultSpan.textContent = topResult;
-        badResultSpan.style.background = '#e57373';
-        badResultSpan.style.color = 'black';
-        goodResultSpan.style.background = '#e0e0e0';
-        goodResultSpan.style.color = '#616161';
+        document.getElementById('result-good').textContent = topResult;
+        document.getElementById('result-good').style.background = '#a5d6a7';
+        document.getElementById('result-bad').style.background = '#e0e0e0';
+      } else if (topResult == 'Ohh you have corona now' && !feedbackSound.isPlaying()) {
+        // song.playMode('sustain');
+        document.getElementById('result-bad').textContent = topResult;
+        document.getElementById('result-bad').style.background = '#e57373';
+        document.getElementById('result-good').style.background = '#e0e0e0';
         feedbackSound.play();
       }
 
+      drawPose();
+
   }
+
 
 }
 
 function largestNumber(one, two, three) {
 
-  let neutral = 'Nice job!';
-  let left = 'Stop touching your face!';
-  let right = 'Stop touching your face!';
+  let neutral = 'Acchi baat no corona';
+  let left = 'Ohh you have corona now';
+  let right = 'Ohh you have corona now';
 
   if (one > two && one > three) {
     return neutral
@@ -107,4 +113,19 @@ function largestNumber(one, two, three) {
     return right
   };
 
+}
+
+
+
+
+function drawPose(pose) {
+  if (webcam.canvas) {
+    ctx.drawImage(webcam.canvas, 0, 0);
+    // draw the keypoints and skeleton
+    if (pose) {
+      const minPartConfidence = 0.5;
+      tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+      tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+    }
+  }
 }
