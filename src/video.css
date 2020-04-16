@@ -90,7 +90,7 @@ body {
   /* display: flex; */
   margin-left: 0;
   margin-right: auto;
-  padding-top: 48px;
+  padding-top: 20%;
   flex-wrap: wrap-reverse;
   max-width: 1096px;
   align-items: center;

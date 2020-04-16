@@ -108,6 +108,7 @@ body {
 
 .how-it-works {
   display: flex;
+  flex-wrap: wrap-reverse;
   margin-left: auto;
   margin-right: auto;
   max-width: 1096px;
@@ -118,21 +119,35 @@ body {
 .how-image {
   width: 50%;
   min-height: 650px;
+  min-width: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.how-image div{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#inline-video{
+  padding: 8px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 360px;
 }
 
 .how-text {
   width: 50%;
   background: #FFD31D;
   min-height: 650px;
+  min-width: 360px;
   overflow: hidden;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
   justify-content: center;
+
 }
 
 .how-text h4 {
@@ -317,6 +332,15 @@ body {
 
 .references-text a {
 color: #263238;
+}
+
+
+.me p{
+  padding-top: 48px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 .loading {
