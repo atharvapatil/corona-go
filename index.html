@@ -13,8 +13,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8.3/dist/teachablemachine-pose.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="./src/main.css">
 
 </head>
@@ -81,12 +79,12 @@
   </div>
 
   <div class="privacy">
-    <div class="privacy-image">
+    <div class="how-image">
       <div>
         <img src="./assets/imgs/privacy.png" alt="" style="width: 400px; height: inherit;">
       </div>
     </div>
-    <div class="privacy-text">
+    <div class="how-text" id="privacy">
       <div>
         <h4>Privacy</h4>
         <p>The algorithm runs locally on the browser. Once the machine learning model is downloaded your data never leaves your browser.</p>
@@ -99,8 +97,8 @@
   </div>
 
 
-  <div class="references">
-    <div class="references-text">
+  <div class="how-it-works">
+    <div class="how-text" id="references">
       <div>
         <h4>References</h4>
         <p><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">CDC</a> & other medical organizations recommend not touching face as one way to
@@ -123,7 +121,7 @@
       </div>
 
     </div>
-    <div class="references-image">
+    <div class="how-image">
 
       <div>
         <img src="./assets/imgs/references.png" alt="" style="width: 500px; height: inherit;">
