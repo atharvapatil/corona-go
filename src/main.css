@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #FFF;
-  scroll-behavior: smooth;
 }
 
 .top-intro {
@@ -116,6 +119,20 @@ body {
   justify-content: center;
 }
 
+.how-text {
+  width: 50%;
+  background: #FFD31D;
+  min-height: 650px;
+  min-width: 360px;
+  overflow: hidden;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .how-image {
   width: 50%;
   min-height: 650px;
@@ -136,23 +153,12 @@ body {
   min-width: 360px;
 }
 
-.how-text {
-  width: 50%;
-  background: #FFD31D;
-  min-height: 650px;
-  min-width: 360px;
-  overflow: hidden;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  justify-content: center;
 
-}
 
 .how-text h4 {
   padding-bottom: 16px;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 32px;
@@ -164,7 +170,8 @@ body {
 
 .how-text p {
   margin: 0;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -180,9 +187,20 @@ body {
   cursor: pointer;
 }
 
+.privacy {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1096px;
+  align-items: center;
+  justify-content: center;
+}
+
 .privacy-image {
   width: 50%;
   min-height: 650px;
+  min-width: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,6 +210,8 @@ body {
   width: 50%;
   background: #8ED6FF;
   min-height: 650px;
+  min-width: 360px;
+  overflow: hidden;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -201,7 +221,8 @@ body {
 
 .privacy-text h4 {
   padding-bottom: 16px;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 32px;
@@ -213,7 +234,8 @@ body {
 
 .privacy-text p {
   margin: 0;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -276,6 +298,7 @@ body {
 
 .references {
   display: flex;
+  flex-wrap: wrap-reverse;
   margin-left: auto;
   margin-right: auto;
   max-width: 1096px;
@@ -284,9 +307,11 @@ body {
 }
 
 .references-text {
-  width: 50%;
   background: #efb1ff;
+  width: 50%;
   min-height: 650px;
+  min-width: 360px;
+  overflow: hidden;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -294,9 +319,19 @@ body {
   justify-content: center;
 }
 
+.references-image{
+  width: 50%;
+  min-height: 650px;
+  min-width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .references-text h4 {
   padding-bottom: 16px;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 32px;
@@ -308,7 +343,8 @@ body {
 
 .references-text p {
   margin: 0;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
