@@ -119,26 +119,31 @@ body {
 .how-text {
   width: 50%;
   background: #FFD31D;
-  min-height: 650px;
-  min-width: 360px;
+  height: 100vh;
+  /* min-width: 420px; */
+  max-width: 550px;
   overflow: hidden;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
   justify-content: center;
-
+  flex: 1 1 380px;
 }
 
 .how-image {
   width: 50%;
-  min-height: 650px;
-  min-width: 360px;
+  min-width: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  flex: 1 1 380px;
 }
-.how-image div{
+.how-image div img{
+  max-width: 410px;
+  min-width: 360px;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -258,6 +263,42 @@ color: #263238;
   font-weight: 400;
   font-size: 20px;
 }
+
+@media only screen and (max-width: 450px) {
+
+  .top-animation {
+    width: 70%;
+  }
+
+  .how-it-works{
+    width: 95%;
+  }
+
+  .how-text{
+    width: 100%;
+  }
+
+  .how-image{
+    width: 100%;
+  }
+
+  .top-text h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .top-text p {
+    text-align: center;
+    /* padding-right: 72px; */
+    font-size: 14px;
+  }
+
+  .top-animation lottie-player{
+    width: 300px;
+    height: 300px;
+  }
+}
+
 
 .loading {
   display: flex;
